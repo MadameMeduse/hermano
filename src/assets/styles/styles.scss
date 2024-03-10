@@ -13,14 +13,6 @@ $font-size-nav-link: 1.2rem;
 }
 
 //Font
-// <uniquifier>: Use a uniquifier for the class name
-
-// .mulish-font {
-//   font-family: "Mulish", sans-serif;
-//   font-optical-sizing: auto;
-//   font-weight: 400;
-//   font-style: normal;
-// }
 
 .comfortaa-main {
   font-family: "Comfortaa", sans-serif;
@@ -29,14 +21,14 @@ $font-size-nav-link: 1.2rem;
   font-style: normal;
 }
 
-/* Add box-sizing border-box to all elements */
+// Base styles
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-// Base styles
 body {
   margin: 0;
   padding: 0;
@@ -122,15 +114,13 @@ img {
   .menu-logo {
     max-width: 100%;
     // background-image: url("/src/assets/images/Hermano_logo_no_bg.png");
-    background-image: url("../images/Hermano_logo_bg.png");
+    background-image: url("/src/assets/images/Hermano_logo_bg.png");
     border-radius: 50%;
-
     background-size: cover;
     width: 7vw;
     height: 7vw;
 
     @media (max-width: 48em) {
-      background-image: url("../images/Hermano_logo_bg.png");
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -345,9 +335,9 @@ img {
     font-size: 5rem;
     min-height: 100vh;
     width: 100vw;
-    background-image: url("../images/Hermano_video_short.gif"); /* Replace 'your-gif.gif' with the path to your GIF file */
-    background-size: cover; /* Cover the entire container with the background image */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-image: url("/src/assets/images/Hermano_video_short.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
     top: 0;
     left: 0;
     justify-content: center;
