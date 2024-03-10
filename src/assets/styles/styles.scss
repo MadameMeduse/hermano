@@ -360,7 +360,7 @@ img {
       var(--_g) calc(200% - var(--_p, 0%)) 100%;
     background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
     outline-offset: 0.1em;
-    transition: background 0.4s, background-size 0s 0.4s, box-shadow 0.4s;
+    transition: all 0.4s;
 
     font: bold 1.5rem/1 system-ui, sans-serif;
     cursor: pointer;
@@ -376,7 +376,8 @@ img {
 
   button:hover {
     --_p: 100%;
-    transition: background 0.4s, background-position 0s, background-size 0s;
+    transition: background-color 0.4s, background-position 0s,
+      background-size 0s;
   }
 
   button:active {
