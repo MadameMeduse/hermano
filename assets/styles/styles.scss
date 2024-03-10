@@ -338,12 +338,14 @@ img {
     font-size: 5rem;
     min-height: 100vh;
     width: 100vw;
-    background-image: url("../images/Hermano_video_short.gif");
     background-size: cover;
     background-repeat: no-repeat;
     top: 0;
     left: 0;
     justify-content: center;
+  }
+  @media screen and (min-width: 445px) {
+    background-image: none !important;
   }
   span {
     line-height: 1;
