@@ -78,6 +78,7 @@ img {
   font-size: 1.7rem;
   font-weight: bold;
   color: white;
+  font-family: system-ui, sans-serif;
 }
 .header li a.active {
   text-decoration: underline;
@@ -208,6 +209,7 @@ img {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  background-color: black;
 }
 @media screen and (max-width: 768px) {
   .main-booking {
@@ -220,10 +222,11 @@ img {
   flex: 1;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-content: center;
   margin: 0 auto;
+  background-color: black;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper {
@@ -253,6 +256,7 @@ img {
 }
 .main-booking .main-wrapper .main-wrapper-content a {
   font-size: 1.3rem;
+  color: white;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-content a {
@@ -269,6 +273,7 @@ img {
 .main-booking .main-wrapper .main-wrapper-content .content-title {
   margin-bottom: 2rem;
   text-transform: uppercase;
+  color: white;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-content .content-title {
@@ -287,7 +292,7 @@ img {
   position: absolute;
   position: absolute;
   left: 1%;
-  top: 50%;
+  top: 10%;
   color: white;
   z-index: 1000;
   font-size: 10rem;
@@ -303,10 +308,47 @@ img {
     background-repeat: no-repeat; /* Prevent the background image from repeating */
     top: 0;
     left: 0;
+    justify-content: center;
   }
 }
 .hero-title span {
   line-height: 1;
+}
+.hero-title button {
+  --c: $color-primary;
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  --_p: 0%;
+  box-shadow: 0 0 0 0.1em inset var(--c);
+  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%, var(--_g) calc(200% - var(--_p, 0%)) 0%, var(--_g) calc(var(--_p, 0%) - 100%) 100%, var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+  outline-offset: 0.1em;
+  transition: background 0.4s, background-size 0s 0.4s, box-shadow 0.4s;
+  font: bold 1.5rem/1 system-ui, sans-serif;
+  cursor: pointer;
+  padding: 0.6em 0.9em;
+  border: solid 2px white;
+  border-radius: 50%;
+  margin-top: 2vw;
+}
+.hero-title button a {
+  color: white;
+}
+.hero-title button:hover {
+  --_p: 100%;
+  transition: background 0.4s, background-position 0s, background-size 0s;
+}
+.hero-title button:active {
+  box-shadow: 0 0 9000000000Q inset rgba(0, 0, 0, 0.6);
+  background-color: var(--c);
+  color: #fff;
+}
+.hero-title body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  gap: 40px;
+  background: #f2dca2;
 }
 
 .hero-slider-container {
@@ -333,7 +375,6 @@ img {
 }
 
 .footer {
-  background-color: rgba(144, 146, 25, 0.7921568627); /* Example background color */
   color: white; /* Example text color */
   padding: 20px;
   margin-top: auto; /* Push footer to the bottom */
@@ -348,10 +389,12 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 0.7rem;
+  font-family: system-ui, sans-serif;
 }
 .footer .footer-wrapper .footer-link {
   color: white;
-  font-size: 1.1rem;
+  font-size: 0.6rem;
 }
 @media screen and (max-width: 768px) {
   .footer .footer-wrapper .footer-link {
