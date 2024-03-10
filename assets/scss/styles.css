@@ -5,12 +5,6 @@
   font-style: normal;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
 /* Add box-sizing border-box to all elements */
 *,
 *::before,
@@ -21,7 +15,7 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: "Mulish", sans-serif;
   line-height: 1.6;
   font-size: 16px;
@@ -74,7 +68,8 @@ img {
   display: block;
   padding: 1rem;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 .header li a.active {
   text-decoration: underline;
@@ -207,33 +202,29 @@ img {
   max-width: 400px;
   align-self: center;
   padding: 0 4rem;
-  display: flex;
-  align-items: center;
+  border-right: solid 2px black;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-image {
     width: 250px;
-    height: auto;
+    height: 250px;
+    border-bottom: solid 1px black;
     border-right: none;
+    padding: 2rem;
   }
 }
 .main-booking .main-wrapper .main-wrapper-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.7rem;
+  padding: 4rem;
 }
-.main-booking .main-wrapper .main-wrapper-content a,
-.main-booking .main-wrapper .main-wrapper-content p {
+.main-booking .main-wrapper .main-wrapper-content a {
   font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
 }
 @media screen and (max-width: 768px) {
-  .main-booking .main-wrapper .main-wrapper-content a,
-  .main-booking .main-wrapper .main-wrapper-content p {
-    font-size: 1.2rem;
+  .main-booking .main-wrapper .main-wrapper-content a {
+    font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -244,18 +235,16 @@ img {
   }
 }
 .main-booking .main-wrapper .main-wrapper-content .content-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-content .content-title {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    display: none;
   }
 }
-
-.hero-slider {
-  overflow: hidden;
+.main-booking .main-wrapper .main-wrapper-content .content-phone {
+  margin: 1rem 0;
 }
 
 .hero-slider-container {
@@ -291,11 +280,6 @@ img {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-@media screen and (max-width: 768px) {
-  .footer {
-    padding-bottom: 100px;
-  }
 }
 .footer .footer-wrapper {
   display: flex;
