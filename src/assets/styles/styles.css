@@ -98,7 +98,7 @@ img {
 }
 .header .menu-logo {
   max-width: 100%;
-  background-image: url("/src/assets/images/Hermano_logo.jpeg");
+  background-image: url("../images/Hermano_logo_bg.png");
   border-radius: 50%;
   background-size: cover;
   width: 7vw;
@@ -106,7 +106,7 @@ img {
 }
 @media (max-width: 48em) {
   .header .menu-logo {
-    background-image: url("/src/assets/images/Hermano_logo.jpeg");
+    background-image: url("../images/Hermano_logo_bg.png");
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -240,11 +240,8 @@ img {
 }
 @media screen and (max-width: 768px) {
   .main-booking .main-wrapper .main-wrapper-image {
-    width: 250px;
-    height: 250px;
     border-bottom: solid 1px black;
     border-right: none;
-    padding: 2rem;
   }
 }
 .main-booking .main-wrapper .main-wrapper-content {
