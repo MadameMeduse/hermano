@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.querySelector(".menu-btn");
   const menu = document.querySelector(".menu");
+  const header = document.querySelector(".header");
 
   menuBtn.addEventListener("click", function () {
     menu.classList.toggle("open");
+    header.classList.toggle("open");
   });
 });
 

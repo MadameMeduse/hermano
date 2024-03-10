@@ -63,6 +63,11 @@ img {
   position: fixed;
   padding: 0 2vw;
 }
+@media (max-width: 768px) {
+  .header.open {
+    background-color: rgba(0, 0, 0, 0.8431372549);
+  }
+}
 .header ul {
   margin: 0;
   padding: 0;
@@ -128,13 +133,7 @@ img {
 .header .menu.open {
   max-height: 100vh;
   padding-top: 30%;
-  margin-top: -60px;
-}
-@media (max-width: 48em) {
-  .header .menu.open {
-    padding-top: 30%;
-    margin-top: -10vh;
-  }
+  background-color: rgba(0, 0, 0, 0.8431372549);
 }
 .header .menu-icon {
   cursor: pointer;
