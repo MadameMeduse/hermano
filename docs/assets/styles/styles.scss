@@ -111,27 +111,30 @@ img {
       }
     }
   }
-  .menu-logo {
-    max-width: 100%;
-    // background-image: url("/src/assets/images/Hermano_logo_no_bg.png");
-    background-image: url("../images/Hermano_logo_bg.png");
-    border-radius: 50%;
-    background-size: cover;
-    width: 7vw;
-    height: 7vw;
 
-    @media (max-width: 48em) {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-  }
   .logo {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: $font-size-logo;
     padding: 1rem;
     text-decoration: none;
     z-index: 100;
+
+    .menu-logo {
+      max-width: 100%;
+      border-radius: 50%;
+      background-size: cover;
+      width: 7vw;
+
+      margin: auto 0;
+
+      @media (max-width: 48em) {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    }
   }
 
   // Menu styles
