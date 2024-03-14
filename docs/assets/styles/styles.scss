@@ -402,6 +402,11 @@ img {
 }
 
 //Slider styles
+.hero-slider {
+  @media screen and (max-width: 445px) {
+    display: none;
+  }
+}
 .hero-slider-container {
   min-height: 90vh;
 

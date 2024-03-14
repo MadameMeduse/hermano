@@ -343,6 +343,12 @@ img {
   background: #f2dca2;
 }
 
+@media screen and (max-width: 445px) {
+  .hero-slider {
+    display: none;
+  }
+}
+
 .hero-slider-container {
   min-height: 90vh;
 }
