@@ -1,48 +1,86 @@
 Preview https://madamemeduse.github.io/hermano/
 
-The error `fatal: refusing to merge unrelated histories` occurs when you're trying to merge two branches or repositories that don’t share a common history (e.g., the `main` branch and `gh-pages` were created independently). This is common when one of the branches was initialized separately or when changes have been made in both branches without them being synchronized.
+**Deploy changes to  `GH Pages` :**
 
-### **Solution: Allow Unrelated Histories to Merge**
+To build your project into the `docs` folder on the `main` branch (typically for GitHub Pages or similar static site hosting), you can follow these steps. This assumes your build outputs to a `build` or `dist` folder by default, and you want to copy that output into the `docs` folder.
 
-If you are sure you want to merge these branches, you can use the `--allow-unrelated-histories` flag.
+### **Steps:**
 
-### **Steps to Merge with the `--allow-unrelated-histories` Flag:**
+---
 
-1. **Ensure You're on the `gh-pages` Branch**
-   Switch to the `gh-pages` branch:
+### **Step 1: Set Up the `docs` Folder**
 
+1. **Ensure the `docs` Folder Exists:**
+
+   First, ensure that the `docs` folder exists on your `main` branch. If it doesn't exist, create it:
    ```zsh
-   git checkout gh-pages
+   mkdir docs
    ```
 
-2. **Merge `main` into `gh-pages` with the `--allow-unrelated-histories` Flag**
-   Run the following command to merge `main` into `gh-pages`, even if they have unrelated histories:
+2. **Switch to the `main` Branch:**
 
+   Make sure you're on the `main` branch before starting:
    ```zsh
-   git merge main --allow-unrelated-histories
-   ```
-
-3. **Resolve Any Merge Conflicts (if any)**
-   If there are any conflicts, Git will notify you. Open the conflicted files and resolve the issues. After resolving conflicts, stage the files:
-
-   ```zsh
-   git add <file_with_conflict>
-   git commit -m "Resolve merge conflicts"
-   ```
-
-4. **Push the Changes to the Remote `gh-pages` Branch**
-   After merging and resolving any conflicts, push the changes to `gh-pages`:
-
-   ```zsh
-   git push origin gh-pages
+   git checkout main
    ```
 
 ---
 
-### **Why Use `--allow-unrelated-histories`?**
+### **Step 2: Build the Project**
 
-Git by default prevents merging branches that have no common history to prevent potential issues. Using `--allow-unrelated-histories` lets you force the merge even if the histories are unrelated. This is useful when you're sure the changes from both branches are intended to be merged.
+1. **Build Your Project:**
+
+   Run the build command for your project. For example, if you're using a Node.js project, it could be:
+   ```zsh
+   npm run build
+   ```
+
+   This will generate the build output (usually in a folder like `build` or `dist`).
 
 ---
 
-Let me know if this resolves your issue or if you encounter any more challenges!
+### **Step 3: Copy the Build Output to the `docs` Folder**
+
+1. **Copy the Build Files to the `docs` Folder:**
+
+   After building your project, you need to copy the build output (e.g., from the `build` or `dist` folder) into the `docs` folder:
+   ```zsh
+   cp -r build/* docs/
+   ```
+   If your build output is in a folder other than `build` (e.g., `dist`), replace `build` with the appropriate folder name.
+
+---
+
+### **Step 4: Stage the Changes**
+
+1. **Stage the Changes to the `docs` Folder:**
+
+   Stage the files you copied to the `docs` folder:
+   ```zsh
+   git add docs/
+   ```
+
+---
+
+### **Step 5: Commit the Changes**
+
+1. **Commit the Changes:**
+
+   Commit the files that were added to the `docs` folder:
+   ```zsh
+   git commit -m "Deploy build output to docs folder"
+   ```
+
+---
+
+### **Step 6: Push to the Remote Repository**
+
+1. **Push Changes to `main` Branch:**
+
+   Push the changes to the remote repository's `main` branch:
+   ```zsh
+   git push origin main
+   ```
+
+---
+
