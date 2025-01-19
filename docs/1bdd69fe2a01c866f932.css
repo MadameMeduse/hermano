@@ -1,0 +1,370 @@
+.mulish-font {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comfortaa-main {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Add box-sizing border-box to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Comfortaa", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  background-color: transparent;
+  position: sticky;
+  width: 100%;
+  z-index: 10000000;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 0 2vw;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.header li a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: white;
+}
+.header li a.active {
+  text-decoration: underline;
+}
+@media (min-width: 48em) {
+  .header li a {
+    font-size: 1.2rem;
+  }
+  .header li a:hover {
+    text-decoration: underline;
+  }
+}
+.header .menu-logo {
+  max-width: 100%;
+  background-image: url("/src/assets/images/Hermano_logo.jpeg");
+  border-radius: 50%;
+  background-size: cover;
+  width: 7vw;
+  height: 7vw;
+}
+@media (max-width: 48em) {
+  .header .menu-logo {
+    background-image: url("/src/assets/images/Hermano_logo.jpeg");
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+.header .logo {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  text-decoration: none;
+  z-index: 100;
+}
+.header .menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.header .menu.open {
+  max-height: 100vh;
+  padding-top: 30%;
+  margin-top: -60px;
+}
+@media (max-width: 48em) {
+  .header .menu.open {
+    padding-top: 30%;
+    margin-top: -10vh;
+  }
+}
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 100;
+}
+.header .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 2rem;
+}
+.header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.header .menu-icon .navicon:before {
+  top: 0.5rem;
+}
+.header .menu-icon .navicon:after {
+  top: -0.5rem;
+}
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  min-height: 100vh;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+@media (min-width: 48em) {
+  .header ul {
+    flex-direction: row;
+  }
+  .header li {
+    margin-right: 2rem;
+  }
+  .header .menu {
+    max-height: none;
+    overflow: visible;
+    position: relative;
+    flex-direction: row;
+    background-color: transparent;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+.main-booking {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+@media screen and (max-width: 768px) {
+  .main-booking {
+    min-height: 100vh;
+  }
+}
+.main-booking .main-wrapper {
+  max-width: 1000px;
+  padding: 3vw;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  background-color: black;
+}
+@media screen and (max-width: 768px) {
+  .main-booking .main-wrapper {
+    flex-direction: column;
+  }
+}
+.main-booking .main-wrapper .main-wrapper-image {
+  max-width: 400px;
+  align-self: center;
+  padding: 0 4rem;
+  border-right: solid 2px black;
+}
+@media screen and (max-width: 768px) {
+  .main-booking .main-wrapper .main-wrapper-image {
+    width: 250px;
+    height: 250px;
+    border-bottom: solid 1px black;
+    border-right: none;
+    padding: 2rem;
+  }
+}
+.main-booking .main-wrapper .main-wrapper-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+.main-booking .main-wrapper .main-wrapper-content a {
+  font-size: 1.3rem;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .main-booking .main-wrapper .main-wrapper-content a {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-booking .main-wrapper .main-wrapper-content {
+    align-items: center;
+    padding: 2rem;
+    margin: 0;
+  }
+}
+.main-booking .main-wrapper .main-wrapper-content .content-title {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .main-booking .main-wrapper .main-wrapper-content .content-title {
+    display: none;
+  }
+}
+.main-booking .main-wrapper .main-wrapper-content .content-phone {
+  margin: 1rem 0;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  position: absolute;
+  left: 1%;
+  top: 10%;
+  color: white;
+  z-index: 1000;
+  font-size: 10rem;
+  padding: 6vw 2vw;
+}
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 5rem;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("../images/Hermano_video_short.gif"); /* Replace 'your-gif.gif' with the path to your GIF file */
+    background-size: cover; /* Cover the entire container with the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    top: 0;
+    left: 0;
+    justify-content: center;
+  }
+}
+.hero-title span {
+  line-height: 1;
+}
+
+.hero-slider-container {
+  min-height: 90vh;
+}
+.hero-slider-container .slider {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Adjust height as needed */
+}
+.hero-slider-container .slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center top;
+}
+.hero-slider-container .slider .slide.active {
+  opacity: 1;
+}
+
+.footer {
+  color: white; /* Example text color */
+  padding: 20px;
+  margin-top: auto; /* Push footer to the bottom */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer .footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+.footer .footer-wrapper .footer-link {
+  color: white;
+  font-size: 0.6rem;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-wrapper .footer-link {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    font-size: 0.7rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
